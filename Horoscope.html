@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>วงล้อพรหมชาติทำนายดวงชะตา (Prommachat Fortune Wheel)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Prompt & Sarabun -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'thai-gold': '#F59E0B',
+                        'thai-gold-dark': '#D97706',
+                        'thai-red': '#E11D48',
+                        'thai-purple': '#8B5CF6',
+                        'thai-emerald': '#10B981',
+                        'thai-blue': '#06B6D4',
+                        'thai-navy': '#1E1B4B',
+                        'thai-cream': '#FEF3C7'
+                    },
+                    fontFamily: {
+                        'prompt': ['Prompt', 'sans-serif'],
+                        'sarabun': ['Sarabun', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background: linear-gradient(135deg, #1E1B4B 0%, #311B92 40%, #4A148C 80%, #1A237E 100%);
+            min-height: 100vh;
+            color: #1F2937;
+        }
+
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Prompt', sans-serif;
+        }
+
+        /* Thai Modern Decorative Patterns */
+        .thai-pattern-bg {
+            background-color: rgba(255, 255, 255, 0.96);
+            background-image: radial-gradient(#F59E0B 0.75px, transparent 0.75px), radial-gradient(#F59E0B 0.75px, #ffffff 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #B45309 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-border {
+            border: 2px solid #F59E0B;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Wheel Pointer Pulse Animation */
+        @keyframes pulse-gold {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.8)); }
+            50% { transform: scale(1.1); filter: drop-shadow(0 0 16px rgba(245, 158, 11, 1)); }
+        }
+
+        .pointer-anim {
+            animation: pulse-gold 2s infinite ease-in-out;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1E1B4B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #F59E0B;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="py-6 px-3 sm:px-6 md:px-10 flex flex-col justify-between min-h-screen">
+
+    <!-- Header Banner -->
+    <header class="max-w-5xl mx-auto w-full text-center mb-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-sm font-medium mb-3 backdrop-blur-md">
+            <i class="fa-solid fa-dharmachakra animate-spin-slow"></i> ตำราพรหมชาติโบราณฉบับประยุกต์
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-extrabold gold-gradient-text tracking-wide drop-shadow-md mb-2">
+            วงล้อพรหมชาติทำนายดวงชะตา
+        </h1>
+        <p class="text-amber-100/90 text-sm sm:text-base max-w-2xl mx-auto font-light">
+            ตรวจดวงชะตารายปีตามเกณฑ์ชันษาจรพรหมชาติ หมุนวงล้อเพื่อค้นหาดวงตกฐานมงคลหรือเกณฑ์ต้องระวัง พร้อมคำแนะนำเสริมมงคลชีวิต
+        </p>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-10">
+
+        <!-- LEFT COLUMN: Inputs & Options (5 cols) -->
+        <section class="lg:col-span-5 bg-white/95 backdrop-blur-md rounded-3xl p-6 sm:p-8 shadow-2xl border-2 border-amber-400/30 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center gap-3 border-b border-slate-200 pb-4 mb-6">
+                    <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-500 to-rose-500 flex items-center justify-center text-white shadow-md">
+                        <i class="fa-solid fa-user-gear text-lg"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-800">ข้อมูลดวงชะตา</h2>
+                        <p class="text-xs text-slate-500">กรอกข้อมูลให้ครบถ้วนเพื่อความแม่นยำ</p>
+                    </div>
+                </div>
+
+                <form id="fortuneForm" class="space-y-5" onsubmit="event.preventDefault(); startSpin();">
+                    <!-- Age Input -->
+                    <div>
+                        <label for="ageInput" class="block text-sm font-semibold text-slate-700 mb-1.5">
+                            <i class="fa-solid fa-cake-candles text-amber-500 mr-1.5"></i>อายุย่าง (ปี)
+                        </label>
+                        <div class="relative">
+                            <input type="number" id="ageInput" min="1" max="120" placeholder="เช่น 25, 30, 45" required
+                                class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 outline-none transition text-lg font-semibold text-slate-800 bg-slate-50/50">
+                            <span class="absolute right-4 top-3.5 text-xs text-slate-400 font-normal">ปีนับย่าง</span>
+                        </div>
+                        <p class="text-[11px] text-amber-700 mt-1">* นับอายุเต็มบวกด้วย 1 ปี (นับแบบย่างพรหมชาติ)</p>
+                    </div>
+
+                    <!-- Gender Selection -->
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-1.5">
+                            <i class="fa-solid fa-venus-mars text-rose-500 mr-1.5"></i>เพศ (กำหนดการหมุนเวียนฐาน)
+                        </label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="gender" value="male" checked class="peer hidden">
+                                <div class="p-3 text-center rounded-xl border-2 border-slate-200 peer-checked:border-amber-500 peer-checked:bg-amber-50 peer-checked:text-amber-900 transition flex items-center justify-center gap-2 font-medium text-slate-600">
+                                    <i class="fa-solid fa-mars text-blue-500 text-lg"></i> ชาย (เวียนขวา)
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="gender" value="female" class="peer hidden">
+                                <div class="p-3 text-center rounded-xl border-2 border-slate-200 peer-checked:border-rose-500 peer-checked:bg-rose-50 peer-checked:text-rose-900 transition flex items-center justify-center gap-2 font-medium text-slate-600">
+                                    <i class="fa-solid fa-venus text-pink-500 text-lg"></i> หญิง (เวียนซ้าย)
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Day of Birth -->
+                    <div>
+                        <label for="daySelect" class="block text-sm font-semibold text-slate-700 mb-1.5">
+                            <i class="fa-solid fa-calendar-day text-indigo-500 mr-1.5"></i>วันเกิดประจำสัปดาห์
+                        </label>
+                        <select id="daySelect" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-amber-500 outline-none text-slate-700 font-medium bg-slate-50/50">
+                            <option value="0">วันอาทิตย์</option>
+                            <option value="1">วันจันทร์</option>
+                            <option value="2">วันอังคาร</option>
+                            <option value="3">วันพุธ (กลางวัน/กลางคืน)</option>
+                            <option value="4">วันพฤหัสบดี</option>
+                            <option value="5">วันศุกร์</option>
+                            <option value="6">วันเสาร์</option>
+                        </select>
+                    </div>
+
+                    <!-- Zodiac Year -->
+                    <div>
+                        <label for="zodiacSelect" class="block text-sm font-semibold text-slate-700 mb-1.5">
+                            <i class="fa-solid fa-dragon text-emerald-500 mr-1.5"></i>ปีนักษัตร
+                        </label>
+                        <select id="zodiacSelect" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-amber-500 outline-none text-slate-700 font-medium bg-slate-50/50">
+                            <option value="ชวด">ปีชวด (หนู)</option>
+                            <option value="ฉลู">ปีฉลู (วัว)</option>
+                            <option value="ขาล">ปีขาล (เสือ)</option>
+                            <option value="เถาะ">ปีเถาะ (กระต่าย)</option>
+                            <option value="มะโรง">ปีมะโรง (งูใหญ่)</option>
+                            <option value="มะเส็ง">ปีมะเส็ง (งูเล็ก)</option>
+                            <option value="มะเมีย">ปีมะเมีย (ม้า)</option>
+                            <option value="มะแม">ปีมะแม (แพะ)</option>
+                            <option value="วอก">ปีวอก (ลิง)</option>
+                            <option value="ระกา">ปีระกา (ไก่)</option>
+                            <option value="จอ">ปีจอ (สุนัข)</option>
+                            <option value="กุน">ปีกุน (หมู)</option>
+                        </select>
+                    </div>
+
+                    <!-- Sound Toggle -->
+                    <div class="flex items-center justify-between pt-2">
+                        <span class="text-xs text-slate-500 font-medium"><i class="fa-solid fa-volume-high text-amber-500 mr-1"></i> เสียงประกอบหมุนวงล้อ</span>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="soundToggle" checked class="sr-only peer">
+                            <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-amber-500"></div>
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="spinBtn"
+                        class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-amber-500 via-rose-500 to-purple-600 hover:from-amber-600 hover:via-rose-600 hover:to-purple-700 text-white font-extrabold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:translate-y-0 transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-dharmachakra text-xl"></i> หมุนวงล้อทำนายดวง
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- RIGHT COLUMN: Fortune Wheel & Canvas (7 cols) -->
+        <section class="lg:col-span-7 flex flex-col items-center justify-center relative">
+            <div class="relative w-full max-w-[480px] aspect-square flex items-center justify-center p-2">
+                <!-- Wheel Decorative Outer Ring -->
+                <div class="absolute inset-0 rounded-full border-8 border-amber-400/40 shadow-[0_0_30px_rgba(245,158,11,0.5)] animate-pulse"></div>
+
+                <!-- Center Pointer (Top Arrow) -->
+                <div class="absolute -top-3 z-30 flex flex-col items-center pointer-events-none pointer-anim">
+                    <div class="w-8 h-10 bg-gradient-to-b from-amber-300 via-amber-500 to-red-600 clip-polygon shadow-2xl" 
+                         style="clip-path: polygon(100% 0, 0 0, 50% 100%);"></div>
+                    <div class="w-4 h-4 bg-amber-200 rounded-full -mt-7 border-2 border-white shadow-md"></div>
+                </div>
+
+                <!-- Canvas Wheel -->
+                <canvas id="wheelCanvas" width="800" height="800" class="w-full h-full rounded-full shadow-2xl z-10 transition-transform duration-100 ease-out"></canvas>
+
+                <!-- Center Cap Emblem -->
+                <div class="absolute z-20 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-gradient-to-br from-amber-300 via-amber-500 to-amber-700 border-4 border-white shadow-2xl flex flex-col items-center justify-center text-white pointer-events-none">
+                    <i class="fa-solid fa-sun text-2xl sm:text-3xl text-amber-100 animate-spin-slow"></i>
+                    <span class="text-[10px] sm:text-xs font-bold tracking-widest text-amber-100 uppercase mt-0.5">พรหมชาติ</span>
+                </div>
+            </div>
+
+            <!-- Quick Legend / Status Indicator -->
+            <div class="mt-4 text-center">
+                <p id="wheelStatusText" class="text-amber-200 text-sm font-medium bg-black/30 backdrop-blur-md px-4 py-1.5 rounded-full border border-amber-500/20 inline-block">
+                    ✨ ระบุข้อมูลและกด "หมุนวงล้อทำนายดวง"
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- RESULT MODAL -->
+    <div id="resultModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border-2 border-amber-400 transform scale-95 transition-transform duration-300" id="modalContent">
+            
+            <!-- Modal Header -->
+            <div id="modalHeaderBg" class="p-6 text-white text-center relative overflow-hidden rounded-t-3xl bg-gradient-to-r from-amber-500 to-rose-600">
+                <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-black/20 hover:bg-black/40 flex items-center justify-center text-white transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+                <div class="inline-block px-3 py-1 rounded-full bg-white/20 text-xs font-semibold mb-2 backdrop-blur-sm">
+                    ผลการทำนายเกณฑ์ชันษาจร
+                </div>
+                <h2 id="resultBaseTitle" class="text-3xl sm:text-4xl font-extrabold mb-1">ตกฐานเจดีย์</h2>
+                <p id="resultSubtitle" class="text-amber-100 text-sm font-light">สำหรับผู้ชาย อายุ 25 ปี (เวียนขวา)</p>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6 sm:p-8 space-y-6 thai-pattern-bg">
+
+                <!-- Fortune Score Gauge Bar -->
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-bold text-slate-700"><i class="fa-solid fa-star text-amber-500 mr-1"></i> ระดับดวงมงคล</span>
+                        <span id="resultScoreText" class="text-sm font-extrabold text-amber-600">85% (มงคลยิ่ง)</span>
+                    </div>
+                    <div class="w-full bg-slate-200 h-3.5 rounded-full overflow-hidden">
+                        <div id="resultProgressBar" class="bg-gradient-to-r from-amber-400 to-emerald-500 h-full rounded-full transition-all duration-1000" style="width: 85%"></div>
+                    </div>
+                    <div id="resultStars" class="flex justify-center gap-1.5 mt-2 text-amber-400 text-lg">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                </div>
+
+                <!-- Detailed Aspects Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <!-- Work/Career -->
+                    <div class="p-4 rounded-2xl bg-blue-50/70 border border-blue-200 flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-blue-500 text-white flex items-center justify-center shrink-0 shadow-sm">
+                            <i class="fa-solid fa-briefcase text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-blue-900 text-sm">การงาน / กิจการ</h4>
+                            <p id="resultWork" class="text-xs text-blue-800 mt-1 leading-relaxed">มีโอกาสเติบโตก้าวหน้า ได้รับการสนับสนุนจากผู้ใหญ่</p>
+                        </div>
+                    </div>
+
+                    <!-- Wealth/Finance -->
+                    <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200 flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-sm">
+                            <i class="fa-solid fa-coins text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-amber-900 text-sm">การเงิน / โชคลาภ</h4>
+                            <p id="resultFinance" class="text-xs text-amber-800 mt-1 leading-relaxed">ราบรื่น มีลาภผลลอยเข้ามา ค้าขายได้กำไรงาม</p>
+                        </div>
+                    </div>
+
+                    <!-- Love/Relationship -->
+                    <div class="p-4 rounded-2xl bg-rose-50/70 border border-rose-200 flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-rose-500 text-white flex items-center justify-center shrink-0 shadow-sm">
+                            <i class="fa-solid fa-heart text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-rose-900 text-sm">ความรัก / ความสัมพันธ์</h4>
+                            <p id="resultLove" class="text-xs text-rose-800 mt-1 leading-relaxed">คนมีคู่รักเข้าใจกันดี คนโสดมีเกณฑ์พบมิตรแท้</p>
+                        </div>
+                    </div>
+
+                    <!-- Health -->
+                    <div class="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200 flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-sm">
+                            <i class="fa-solid fa-notes-medical text-lg"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-emerald-900 text-sm">สุขภาพ / ร่างกาย</h4>
+                            <p id="resultHealth" class="text-xs text-emerald-800 mt-1 leading-relaxed">พลานามัยสมบูรณ์ แข็งแรง ไม่มีโรคภัยเบียดเบียน</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tips & Recommendations -->
+                <div class="bg-amber-100/60 p-4 rounded-2xl border border-amber-300/80 space-y-2">
+                    <h4 class="font-bold text-amber-900 text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-lightbulb text-amber-600"></i> ข้อแนะนำสิริมงคล & สีมงคล
+                    </h4>
+                    <p id="resultTips" class="text-xs text-amber-950 leading-relaxed">
+                        ทำบุญตักบาตร หรือถวายสังฆทาน เสริมสร้างบารมี สีมงคลเสริมดวงประจำปีนี้คือ สีทอง และ สีเขียวมรกต
+                    </p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                    <button onclick="copyResult()" class="flex-1 py-3 px-4 rounded-xl border-2 border-slate-300 hover:bg-slate-100 text-slate-700 font-bold text-sm transition flex items-center justify-center gap-2">
+                        <i class="fa-regular fa-copy"></i> คัดลอกคำทำนาย
+                    </button>
+                    <button onclick="closeModal()" class="flex-1 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-rose-500 hover:from-amber-600 hover:to-rose-600 text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-rotate-right"></i> หมุนทำนายอีกครั้ง
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-5 py-3 rounded-2xl shadow-2xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 z-50">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toastMsg" class="text-sm font-medium">คัดลอกคำทำนายเรียบร้อยแล้ว</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-8 text-center text-xs text-amber-200/60">
+        <p>© วงล้อพรหมชาติทำนายดวงชะตา - แอปพลิเคชันคำนวณตามเกณฑ์ชันษาจรพรหมชาติโบราณ</p>
+    </footer>
+
+    <script>
+        // Data Structure for the 12 Prommachat Bases
+        // Order: 0:เจดีย์, 1:ฉัตรเงิน, 2:คอขาด, 3:เรือนหลวง, 4:ปราสาท, 5:ราหู, 6:ฉัตรทอง, 7:เทวดา, 8:คนคอขาด/ยักษ์, 9:แม่หม้าย, 10:พญาโชติ, 11:สัตว์นาม
+        const PROMMACHAT_BASES = [
+            {
+                id: 0,
+                name: "ฐานเจดีย์",
+                color: "#F59E0B", // Amber Gold
+                icon: "fa-place-of-worship",
+                score: 95,
+                scoreLabel: "95% (มงคลยิ่งใหญ่)",
+                stars: 5,
+                work: "การงานราบรื่น ได้รับการส่งเสริมจากผู้ใหญ่ เจริญก้าวหน้าในตำแหน่งหน้าที่",
+                finance: "โชคลาภดีเยี่ยม มีเงินทองไหลมาเทมา การค้าขายได้กำไรงาม",
+                love: "ความรักมีความสุข เข้าอกเข้าใจกันดี สมหวังในสิ่งที่ปรารถนา",
+                health: "สุขภาพแข็งแรง สดใส ไร้โรคภัยเบียดเบียน",
+                tips: "แนะนำให้เข้าวัดทำบุญ ไหว้พระประธาน เสริมบารมี สีมงคล: สีทอง, สีขาว"
+            },
+            {
+                id: 1,
+                name: "ฐานฉัตรเงิน",
+                color: "#94A3B8", // Slate Silver
+                icon: "fa-umbrella",
+                score: 85,
+                scoreLabel: "85% (มงคลดีมาก)",
+                stars: 4.5,
+                work: "มีผู้คอยอุปถัมภ์ช่วยเหลือ ทำสิ่งใดก็สำเร็จราบรื่นไม่ติดขัด",
+                finance: "การเงินคล่องตัว มีรายได้เข้ามาสม่ำเสมอ มีลาภปากลาภผล",
+                love: "มีเสน่ห์ มีคนมาเมตตาเอ็นดู คนมีคู่ไร้อุปสรรค",
+                health: "สุขภาพดี มีกำลังกายกำลังใจเข้มแข็ง",
+                tips: "ร่วมทำบุญบริจาคทานค่าน้ำค่าไฟวัด เสริมความคล่องตัว สีมงคล: สีเงิน, สีฟ้า"
+            },
+            {
+                id: 2,
+                name: "ฐานคอขาด",
+                color: "#E11D48", // Crimson Red
+                icon: "fa-triangle-exclamation",
+                score: 30,
+                scoreLabel: "30% (ต้องระมัดระวัง)",
+                stars: 1.5,
+                work: "ระวังคดีความหรือขัดแย้งกับผู้ร่วมงาน ควรถอยคนละก้าวและตั้งสติ",
+                finance: "อย่าเพิ่งลงทุนเสี่ยงโชค ระวังการถูกหลอกลวงหรือเสียเงินก้อน",
+                love: "อาจมีความขัดแย้ง ใช้อารมณ์ตัดสินปัญหา ควรอดทนใจเย็น",
+                health: "ระวังอุบัติเหตุจากการเดินทาง และของมีคมบาด cut",
+                tips: "ปล่อยนกปล่อยปลา ถวายสังฆทานยา ทำบุญโรงพยาบาล สีมงคล: สีม่วง, สีเทา"
+            },
+            {
+                id: 3,
+                name: "ฐานเรือนหลวง",
+                color: "#8B5CF6", // Purple
+                icon: "fa-house-chimney-crack",
+                score: 90,
+                scoreLabel: "90% (มงคลเจริญรุ่งเรือง)",
+                stars: 4.5,
+                work: "มีเกณฑ์ซื้อขายอสังหาริมทรัพย์ ได้รับตำแหน่งใหญ่โต มั่นคง",
+                finance: "มั่งคั่ง มีทรัพย์สินเพิ่มพูน มีเกณฑ์ได้บ้านหรือที่ดิน",
+                love: "ครองคู่มั่นคง อบอุ่น พร้อมสร้างครอบครัวปึกแผ่น",
+                health: "สมบูรณ์ดี ไม่มีเรื่องน่ากังวลใจ",
+                tips: "ทำบุญซื้อที่ดินถวายวัด หรือซ่อมแซมเสนาสนะ สีมงคล: สีม่วง, สีแสด"
+            },
+            {
+                id: 4,
+                name: "ฐานปราสาท",
+                color: "#10B981", // Emerald Green
+                icon: "fa-chess-rook",
+                score: 92,
+                scoreLabel: "92% (มงคลยิ่งใหญ่)",
+                stars: 5,
+                work: "ประสบความสำเร็จสูงสุดในสายงาน เกียรติยศชื่อเสียงขจรขจาย",
+                finance: "ร่ำรวย เงินทองอุดมสมบูรณ์ มีโชคก้อนใหญ่เข้ามา",
+                love: "สมบูรณ์แบบ ได้คู่ครองดี มีฐานะมั่นคง",
+                health: "แข็งแรงไร้โรคา สุขกายสบายใจ",
+                tips: "ร่วมสร้างโบสถ์วิหาร ถวายภัตตาหารแด่พระสงฆ์ สีมงคล: สีเขียวมรกต, สีทอง"
+            },
+            {
+                id: 5,
+                name: "ฐานราหู",
+                color: "#334155", // Dark Slate
+                icon: "fa-moon",
+                score: 40,
+                scoreLabel: "40% (ผันผวนต้องระวัง)",
+                stars: 2,
+                work: "งานมีความผันผวน มีแรงกดดัน ถูกนินทาใส่ร้ายให้ระวังคนใกล้ตัว",
+                finance: "ระวังรายจ่ายรวดเร็ว อย่าให้ใครยืมเงินเด็ดขาด",
+                love: "อารมณ์แปรปรวนง่าย หึงห่วงเกินเหตุ ต้องเชื่อใจกัน",
+                health: "ระวังเรื่องนอนไม่หลับ ปวดหัว ความเครียดสะสม",
+                tips: "ไหว้พระราหู ทำบุญแสงสว่าง ถวายหลอดไฟ เติมน้ำมันตะเกียง สีมงคล: สีดำ, สีบรอนซ์"
+            },
+            {
+                id: 6,
+                name: "ฐานฉัตรทอง",
+                color: "#EAB308", // Golden Yellow
+                icon: "fa-crown",
+                score: 98,
+                scoreLabel: "98% (มงคลสูงสุด)",
+                stars: 5,
+                work: "ผู้ใหญ่เมตตาเอ็นดูอย่างยิ่ง เติบโตก้าวหน้าอย่างรวดเร็ว",
+                finance: "โชคลาภมหาศาล มีกินมีใช้ไม่ขาดมือ เสี่ยงโชคมีลุ้น",
+                love: "ความรักสดใส ได้รับการดูแลเอาใจใส่เป็นอย่างดี",
+                health: "พลานามัยดีเยี่ยม สดชื่นกระปรี้กระเปร่า",
+                tips: "ปิดทองพระประธาน ถวายผ้าไตรจีวร สีมงคล: สีเหลืองทอง, สีส้ม"
+            },
+            {
+                id: 7,
+                name: "ฐานเทวดา",
+                color: "#06B6D4", // Cyan Blue
+                icon: "fa-wand-magic-sparkles",
+                score: 88,
+                scoreLabel: "88% (มงคลคุ้มครอง)",
+                stars: 4.5,
+                work: "สิ่งศักดิ์สิทธิ์คุ้มครอง แคล้วคลาดอุปสรรค งานสร้างสรรค์ปังมาก",
+                finance: "การเงินหมุนเวียนดี มีโชคจากสิ่งศักดิ์สิทธิ์หรือความฝัน",
+                love: "พรหมลิขิตนำพาคนดีๆ เข้ามาในชีวิต",
+                health: "ปลอดภัยจากโรคภัยไข้เจ็บ รอดพ้นอันตราย",
+                tips: "สวดมนต์ไหว้พระเจริญสมาธิภาวนา กรวดน้ำอุทิศส่วนกุศล สีมงคล: สีฟ้า, สีชมพู"
+            },
+            {
+                id: 8,
+                name: "ฐานยักษ์",
+                color: "#DC2626", // Bright Red
+                icon: "fa-mask",
+                score: 35,
+                scoreLabel: "35% (เกณฑ์ใจร้อนขัดแย้ง)",
+                stars: 2,
+                work: "ระวังการใช้อารมณ์กับ同僚หรือผู้บังคับบัญชา มีความขัดแย้ง",
+                finance: "ติดขัดบ้าง มีเรื่องจ่ายเงินกระทันหัน ชะลอการซื้อของชิ้นใหญ่",
+                love: "ลิ้นกับฟันกระทบกระทั่ง ควรมีสติและควบคุมอารมณ์",
+                health: "ระวังโรคเกี่ยวกับความดัน หัวใจ หรืออุบัติเหตุจากความประมาท",
+                tips: "ไหว้ท้าวเวสสุวรรณ ทำบุญบริจาคเลือด ปล่อยโคกระบือ สีมงคล: สีแดง, สีน้ำเงิน"
+            },
+            {
+                id: 9,
+                name: "ฐานแม่หม้าย",
+                color: "#EC4899", // Pink Violet
+                icon: "fa-heart-crack",
+                score: 50,
+                scoreLabel: "50% (ปานกลาง/เหงาใจ)",
+                stars: 2.5,
+                work: "ต้องพึ่งพาตนเองเป็นหลัก เหน็ดเหนื่อยแต่จะผ่านไปได้",
+                finance: "พอมีพอใช้ แต่ภาระเยอะ ต้องวางแผนการเงินรอบคอบ",
+                love: "คนโสดอาจรู้สึกเหงา คนมีคู่ระวังความไม่เข้าใจกันหรือต้องห่างไกล",
+                health: "ระวังระบบฮอร์โมน สายตา หรือความเครียด",
+                tips: "ทำบุญช่วยเหลือเด็กกำพล้า หรือผู้สูงอายุไร้บ้าน สีมงคล: สีชมพู, สีเขียว"
+            },
+            {
+                id: 10,
+                name: "ฐานพญาโชติ",
+                color: "#F97316", // Orange Flame
+                icon: "fa-fire",
+                score: 80,
+                scoreLabel: "80% (มงคลโดดเด่น)",
+                stars: 4,
+                work: "โดดเด่นมีชื่อเสียง มีไฟในการทำงาน เสนอผลงานแล้วผ่านฉลุย",
+                finance: "ได้รับเงินก้อนจากการทำงานหนัก ลาภผลตกลงตามเป้า",
+                love: "ร้อนแรงมีเสน่ห์ ดึงดูดคนเข้ามาสนใจจำนวนมาก",
+                health: "ระวังเรื่องความร้อนในร่างกาย ปวดตาจากการทำงาน",
+                tips: "เติมน้ำมันตะเกียง ทำบุญบริจาคอุปกรณ์การศึกษา สีมงคล: สีส้ม, สีแดง"
+            },
+            {
+                id: 11,
+                name: "ฐานสัตว์นาม",
+                color: "#059669", // Dark Emerald
+                icon: "fa-paw",
+                score: 65,
+                scoreLabel: "65% (ปานกลางค่อนข้างดี)",
+                stars: 3.5,
+                work: "ต้องเดินทางบ่อย ติดต่อประสานงานต่างถิ่นแล้วจะประสบความสำเร็จ",
+                finance: "ลาภผลมาจากการเดินทางและผู้คนที่อยู่ไกล",
+                love: "อาจพบรักต่างแดน หรือคนที่ต้องเดินทางบ่อย",
+                health: "ระวังอาการปวดเมื่อยจากการเดินทาง ปวดหลัง ปวดขา",
+                tips: "ไถ่ชีวิตสัตว์ ปล่อยปลา ทำบุญช่วยเหลือสัตว์พิการ สีมงคล: สีเขียว, สีน้ำตาล"
+            }
+        ];
+
+        // Global Canvas & Animation State variables
+        const canvas = document.getElementById('wheelCanvas');
+        const ctx = canvas.getContext('2d');
+        let currentRotation = 0; // In radians
+        let isSpinning = false;
+        let audioCtx = null;
+
+        // Init Audio Synth for Tick & Win sound effects
+        function playTickSound() {
+            if (!document.getElementById('soundToggle').checked) return;
+            try {
+                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(120, audioCtx.currentTime + 0.04);
+                
+                gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.01, audioCtx.currentTime + 0.04);
+
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.04);
+            } catch(e) {}
+        }
+
+        function playWinSound() {
+            if (!document.getElementById('soundToggle').checked) return;
+            try {
+                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+
+                const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6
+                notes.forEach((freq, idx) => {
+                    const osc = audioCtx.createOscillator();
+                    const gain = audioCtx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.value = freq;
+                    gain.gain.setValueAtTime(0.2, audioCtx.currentTime + idx * 0.1);
+                    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + idx * 0.1 + 0.4);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start(audioCtx.currentTime + idx * 0.1);
+                    osc.stop(audioCtx.currentTime + idx * 0.1 + 0.4);
+                });
+            } catch(e) {}
+        }
+
+        function drawWheel() {
+            const width = canvas.width;
+            const height = canvas.height;
+            const centerX = width / 2;
+            const centerY = height / 2;
+            const radius = width / 2 - 20;
+            const numSegments = PROMMACHAT_BASES.length;
+            const anglePerSegment = (2 * Math.PI) / numSegments;
+
+            ctx.clearRect(0, 0, width, height);
+
+            for (let i = 0; i < numSegments; i++) {
+                const base = PROMMACHAT_BASES[i];
+                const startAngle = currentRotation + (i * anglePerSegment);
+                const endAngle = startAngle + anglePerSegment;
+
+                // Segment Slice
+                ctx.beginPath();
+                ctx.moveTo(centerX, centerY);
+                ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+                ctx.closePath();
+
+                ctx.fillStyle = base.color;
+                ctx.fill();
+                ctx.strokeStyle = '#FFFFFF';
+                ctx.lineWidth = 6;
+                ctx.stroke();
+
+                // Inner Decorative Border Arc
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, radius - 15, startAngle, endAngle);
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // Draw Text & Labels inside Segment
+                ctx.save();
+                ctx.translate(centerX, centerY);
+                ctx.rotate(startAngle + anglePerSegment / 2);
+                ctx.textAlign = "right";
+                ctx.fillStyle = "#FFFFFF";
+                ctx.font = "bold 30px 'Prompt', sans-serif";
+                ctx.shadowColor = "rgba(0,0,0,0.6)";
+                ctx.shadowBlur = 6;
+                
+                // Base Name & Number Index
+                ctx.fillText(`${i + 1}. ${base.name}`, radius - 45, 10);
+                
+                ctx.restore();
+            }
+
+            // Outer Shiny Gold Ring
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
+            ctx.strokeStyle = '#F59E0B';
+            ctx.lineWidth = 14;
+            ctx.stroke();
+        }
+
+        // Calculation algorithm according to traditional Prommachat rules
+        function calculatePrommachatBase(age, gender) {
+            // Prommachat Base 0 index starts at "เจดีย์"
+            // Male counts clockwise (เวียนขวา): 0, 1, 2, ...
+            // Female counts counter-clockwise (เวียนซ้าย): 0, 11, 10, ...
+            const normalizedAge = parseInt(age, 10);
+            if (isNaN(normalizedAge) || normalizedAge <= 0) return 0;
+
+            const baseCount = 12;
+            let targetIndex = 0;
+
+            if (gender === 'male') {
+                targetIndex = (normalizedAge - 1) % baseCount;
+            } else {
+                targetIndex = (12 - ((normalizedAge - 1) % baseCount)) % baseCount;
+            }
+
+            return targetIndex;
+        }
+
+        // Spin Animation Handler
+        function startSpin() {
+            if (isSpinning) return;
+
+            const age = document.getElementById('ageInput').value;
+            if (!age || age < 1) {
+                alert('กรุณาระบุอายุย่างให้ถูกต้องครับ');
+                return;
+            }
+
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const targetBaseIndex = calculatePrommachatBase(age, gender);
+
+            isSpinning = true;
+            document.getElementById('spinBtn').disabled = true;
+            document.getElementById('spinBtn').classList.add('opacity-50', 'cursor-not-allowed');
+            document.getElementById('wheelStatusText').innerText = "🔮 กำลังตรวจดวงชะตาตามเกณฑ์ชันษาจร...";
+
+            // Calculate Target Rotation Angle
+            // Segments are positioned around 2*PI. Pointer is at TOP (angle -Math.PI / 2 or 270 deg)
+            const numSegments = 12;
+            const segmentAngle = (2 * Math.PI) / numSegments;
+            
+            // Random full spins (5 to 8 rotations for visual excitement)
+            const fullSpins = 5 + Math.floor(Math.random() * 3);
+            
+            // Angle needed so targetBaseIndex ends up at the top pointer (3*Math.PI/2)
+            const targetSegmentCenter = targetBaseIndex * segmentAngle + segmentAngle / 2;
+            const pointerAngle = (3 * Math.PI) / 2;
+            let finalRotation = pointerAngle - targetSegmentCenter;
+
+            // Normalize and add full spins
+            while (finalRotation < currentRotation) {
+                finalRotation += 2 * Math.PI;
+            }
+            finalRotation += fullSpins * 2 * Math.PI;
+
+            const startRotation = currentRotation;
+            const totalDelta = finalRotation - startRotation;
+            const duration = 5000; // 5 seconds duration
+            let startTime = null;
+            let lastTickSegment = -1;
+
+            function animate(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const elapsed = timestamp - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                // Cubic Easing Out for smooth slow-down effect
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                currentRotation = startRotation + totalDelta * easeOut;
+
+                // Check for audio tick sound when passing segments
+                const currentSegment = Math.floor((currentRotation % (2 * Math.PI)) / segmentAngle);
+                if (currentSegment !== lastTickSegment) {
+                    playTickSound();
+                    lastTickSegment = currentSegment;
+                }
+
+                drawWheel();
+
+                if (progress < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    isSpinning = false;
+                    document.getElementById('spinBtn').disabled = false;
+                    document.getElementById('spinBtn').classList.remove('opacity-50', 'cursor-not-allowed');
+                    document.getElementById('wheelStatusText').innerText = "✨ ทำนายดวงเรียบร้อยแล้ว!";
+                    playWinSound();
+                    showResultModal(targetBaseIndex, age, gender);
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        function showResultModal(baseIndex, age, gender) {
+            const data = PROMMACHAT_BASES[baseIndex];
+            const daySelect = document.getElementById('daySelect');
+            const dayText = daySelect.options[daySelect.selectedIndex].text;
+            const zodiacText = document.getElementById('zodiacSelect').value;
+
+            // Fill Modal Contents
+            document.getElementById('resultBaseTitle').innerText = `ตก${data.name}`;
+            document.getElementById('resultSubtitle').innerText = `สำหรับเพศ${gender === 'male' ? 'ชาย' : 'หญิง'} อายุ ${age} ปี (${gender === 'male' ? 'เวียนขวา' : 'เวียนซ้าย'}) • เกิด${dayText} ปี${zodiacText}`;
+            
+            document.getElementById('modalHeaderBg').style.background = `linear-gradient(135deg, ${data.color}, #1E1B4B)`;
+            document.getElementById('resultScoreText').innerText = data.scoreLabel;
+            document.getElementById('resultProgressBar').style.width = `${data.score}%`;
+
+            // Star Rating Render
+            const starsContainer = document.getElementById('resultStars');
+            starsContainer.innerHTML = '';
+            const fullStars = Math.floor(data.stars);
+            const hasHalf = data.stars % 1 !== 0;
+            for (let i = 0; i < fullStars; i++) {
+                starsContainer.innerHTML += '<i class="fa-solid fa-star"></i>';
+            }
+            if (hasHalf) {
+                starsContainer.innerHTML += '<i class="fa-solid fa-star-half-stroke"></i>';
+            }
+            for (let i = Math.ceil(data.stars); i < 5; i++) {
+                starsContainer.innerHTML += '<i class="fa-regular fa-star text-amber-300/50"></i>';
+            }
+
+            document.getElementById('resultWork').innerText = data.work;
+            document.getElementById('resultFinance').innerText = data.finance;
+            document.getElementById('resultLove').innerText = data.love;
+            document.getElementById('resultHealth').innerText = data.health;
+            document.getElementById('resultTips').innerText = data.tips;
+
+            // Show Modal with Animation
+            const modal = document.getElementById('resultModal');
+            const content = document.getElementById('modalContent');
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('resultModal');
+            const content = document.getElementById('modalContent');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+        }
+
+        // Copy Result Clipboard Helper
+        function copyResult() {
+            const baseTitle = document.getElementById('resultBaseTitle').innerText;
+            const subtitle = document.getElementById('resultSubtitle').innerText;
+            const score = document.getElementById('resultScoreText').innerText;
+            const work = document.getElementById('resultWork').innerText;
+            const finance = document.getElementById('resultFinance').innerText;
+            const tips = document.getElementById('resultTips').innerText;
+
+            const textToCopy = `🔮 ผลการทำนายดวงชะตาพรหมชาติ 🔮\n${baseTitle} (${subtitle})\nระดับดวงมงคล: ${score}\n\n💼 การงาน: ${work}\n💰 การเงิน: ${finance}\n✨ คำแนะนำ: ${tips}\n\nทำนายดวงโดย วงล้อพรหมชาติทำนายดวงชะตา`;
+
+            // Fallback execCommand for iFrame compatibility
+            const tempInput = document.createElement('textarea');
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            showToast("คัดลอกผลทำนายลง Clipboard เรียบร้อย!");
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Initialize Wheel on Page Load
+        window.onload = function () {
+            drawWheel();
+            
+            // Resize Canvas listener to ensure high DPR sharpness
+            window.addEventListener('resize', () => {
+                drawWheel();
+            });
+        };
+    </script>
+</body>
+</html>
